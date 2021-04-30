@@ -3,8 +3,9 @@ from rest_framework import generics
 from .models import Music
 from .serializers import MusicSerializer
 
-# Create your views here.
-class MusicList(generics.ListCreateAPIView):
+from rest_framework import viewsets
+
+class MusicList(viewsets.ModelViewSet):
 
      queryset = Music.objects.all()
      serializer_class = MusicSerializer
